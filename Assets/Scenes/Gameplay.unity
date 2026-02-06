@@ -421,7 +421,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3334993423598511513, guid: 04c29889d34e75f40acd340f8e2e59b2,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.078233, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4305,7 +4305,7 @@ GameObject:
   - component: {fileID: 1701691623}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4446,7 +4446,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1701691623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4559,6 +4559,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2108089968}
   - component: {fileID: 2108089969}
+  - component: {fileID: 2108089970}
+  - component: {fileID: 2108089971}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Untagged
@@ -4599,6 +4601,62 @@ MonoBehaviour:
   PointA: {fileID: 1334390440}
   PointB: {fileID: 2138434934}
   speed: 2
+--- !u!58 &2108089970
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108089965}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.4, y: 0.15}
+  m_Radius: 0.5128532
+--- !u!114 &2108089971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108089965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  WhatIsVisible:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  DetectionRange: 3.5
+  VisionAngle: 90
 --- !u!1 &2138434933
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,24 @@ using UnityEngine;
 public class EnemyAlarm : MonoBehaviour
 {
     SpriteRenderer alarmRenderer;
+    //VisionDetector detector;
+
+    /*private void Awake()
+    {
+        detector = GetComponent<VisionDetector>();
+    }*/
+
+    /*private void Update()
+    {        
+        if (detector != null && detector.DetectPlayers().Length > 0)
+        {
+            PlayerDetected();
+        }
+        else
+        {
+            PlayerLeft();
+        }
+    }*/
 
     public void PlayerDetected()
     {
@@ -14,7 +32,7 @@ public class EnemyAlarm : MonoBehaviour
 
     public void PlayerLeft()
     {
-        ChangeColor(new Color(0,0,0,0));
+        ChangeColor(Color.green);
     }
 
     private void ChangeColor(Color color)
