@@ -37,6 +37,7 @@ public class VisionDetector : MonoBehaviour
         else
         {
             alarm.PlayerLeft();
+            Debug.Log("ESTETOSCOPIO");
         }
     }
 
