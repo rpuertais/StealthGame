@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class TimeLogic : MonoBehaviour
 {
     private Text label;
-    private float totalTime; //guarda el temps total que ha passat des que ha començat la partida
+    private float totalTime; 
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class TimeLogic : MonoBehaviour
 
     private void UpdateTimeText(float time)
     {
-        int seconds = Mathf.FloorToInt(time); // passar de float a int
+        int seconds = Mathf.FloorToInt(time); 
         label.text = "Time: " + seconds + " sec.";
     }
 }
