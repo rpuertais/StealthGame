@@ -7,7 +7,6 @@ public class TimeLogic : MonoBehaviour
     private Text label;
     private float totalTime; //guarda el temps total que ha passat des que ha començat la partida
 
-
     private void Awake()
     {
         label = GetComponent<Text>();
