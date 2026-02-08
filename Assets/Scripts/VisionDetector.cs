@@ -31,13 +31,11 @@ public class VisionDetector : MonoBehaviour
     {
         if (DetectPlayers().Length > 0) 
         { 
-            Debug.Log("Player detected");
             alarm.PlayerDetected();
         }
         else
         {
             alarm.PlayerLeft();
-            Debug.Log("ESTETOSCOPIO");
         }
     }
 
