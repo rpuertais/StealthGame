@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class VisionDetector : MonoBehaviour
 {
+
     public LayerMask WhatIsPlayer;
     public LayerMask WhatIsVisible;
     public float DetectionRange;
     public float VisionAngle;
-    EnemyAlarm alarm;
+    public EnemyAlarm alarm;
 
     private void OnDrawGizmos()
     {

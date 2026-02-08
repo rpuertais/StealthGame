@@ -272,7 +272,6 @@ GameObject:
   - component: {fileID: 490046347}
   - component: {fileID: 490046350}
   - component: {fileID: 490046349}
-  - component: {fileID: 490046348}
   m_Layer: 0
   m_Name: Alarm
   m_TagString: Untagged
@@ -295,26 +294,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 713300791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &490046348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490046346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
-  WhatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
-  WhatIsVisible:
-    serializedVersion: 2
-    m_Bits: 822
-  DetectionRange: 2.5
-  VisionAngle: 100
 --- !u!114 &490046349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +484,6 @@ GameObject:
   - component: {fileID: 567589345}
   - component: {fileID: 567589346}
   - component: {fileID: 567589347}
-  - component: {fileID: 567589348}
   m_Layer: 0
   m_Name: Alarm
   m_TagString: Untagged
@@ -600,26 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1dc63db7326b5409bb304cc9e6aaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &567589348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567589344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
-  WhatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
-  WhatIsVisible:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  DetectionRange: 3.5
-  VisionAngle: 45
 --- !u!1 &595306063
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619275482}
   - component: {fileID: 619275483}
+  - component: {fileID: 619275484}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -906,6 +865,27 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &619275484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619275481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  WhatIsVisible:
+    serializedVersion: 2
+    m_Bits: 512
+  DetectionRange: 2.5
+  VisionAngle: 45
+  alarm: {fileID: 567589347}
 --- !u!1 &713300789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5833d8fc65204c8429a2a8c7bdefe8b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  rot: 0.25
 --- !u!4 &957774483
 Transform:
   m_ObjectHideFlags: 0
@@ -4690,6 +4671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441953342}
   - component: {fileID: 1441953343}
+  - component: {fileID: 1441953344}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -4771,6 +4753,27 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1441953344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441953341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  WhatIsVisible:
+    serializedVersion: 2
+    m_Bits: 512
+  DetectionRange: 3
+  VisionAngle: 45
+  alarm: {fileID: 490046349}
 --- !u!1 &1539116044
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,7 +5061,6 @@ GameObject:
   - component: {fileID: 1760642718}
   - component: {fileID: 1760642721}
   - component: {fileID: 1760642720}
-  - component: {fileID: 1760642719}
   m_Layer: 0
   m_Name: Alarm
   m_TagString: Untagged
@@ -5081,26 +5083,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 957774483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1760642719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760642717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
-  WhatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
-  WhatIsVisible:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  DetectionRange: 3.5
-  VisionAngle: 45
 --- !u!114 &1760642720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5183,6 +5165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796637533}
   - component: {fileID: 1796637534}
+  - component: {fileID: 1796637535}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -5264,6 +5247,27 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1796637535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796637532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67bfafbbf81cad4f95675610538076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  WhatIsVisible:
+    serializedVersion: 2
+    m_Bits: 512
+  DetectionRange: 2.5
+  VisionAngle: 45
+  alarm: {fileID: 1760642720}
 --- !u!1 &1865967368
 GameObject:
   m_ObjectHideFlags: 0
