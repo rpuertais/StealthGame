@@ -1,50 +1,95 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [Header("Patrol Points")]
     public Transform PointA;
     public Transform PointB;
 
-    [SerializeField]
-    private float speed = 2f;
+    [Header("Visual")]
+    [SerializeField] private Transform spriteTransform;   
+    [SerializeField] private float spriteAngleOffset = 0f;
 
-    private bool objectivePointA;
+    [Header("Speeds")]
+    [SerializeField] private float patrolSpeed = 2f;
+    [SerializeField] private float chaseSpeed = 3.5f;
 
-    void Start()
+    [Header("Chase")]
+    [SerializeField] private float loseChaseExtraRange = 0.1f;
+
+    private bool objectivePointA = true;
+
+    private VisionDetector vision;
+    private Transform chaseTarget;
+
+    private void Awake()
     {
-        objectivePointA = true;
+        vision = GetComponentInChildren<VisionDetector>(true);
+
+        if (spriteTransform == null)
+            spriteTransform = transform.Find("Sprite");
     }
 
-    void Update()
+    private void Update()
     {
-        Move();
+        
+        if (vision != null && vision.DetectedPlayer != null)
+            chaseTarget = vision.DetectedPlayer;
+        else
+            chaseTarget = null;
+
+        if (chaseTarget != null)
+            Chase();
+        else
+            Patrol();
+    }
+
+    private void Patrol()
+    {
+        Vector2 pointPos = objectivePointA ? (Vector2)PointA.position : (Vector2)PointB.position;
+        Vector2 dir = pointPos - (Vector2)transform.position;
+
+        if (vision != null) vision.SetForward(dir);
+        FaceVertical(dir);
+
+        transform.position = Vector2.MoveTowards(transform.position, pointPos, patrolSpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, PointA.position) < 0.1f)
-        {
-            Flip();
             objectivePointA = false;
-        }
 
         if (Vector2.Distance(transform.position, PointB.position) < 0.1f)
-        {
-            Flip();
             objectivePointA = true;
-        }
     }
 
-    private void Move()
+    private void Chase()
     {
-        Vector2 pointPos; 
+        Vector2 targetPos = chaseTarget.position;
+        Vector2 dir = targetPos - (Vector2)transform.position;
 
-        if (objectivePointA) pointPos = PointA.position; 
-        else pointPos = PointB.position;
+        if (vision != null) vision.SetForward(dir);
+        FaceToPlayer(dir);
 
-        transform.position = Vector2.MoveTowards( transform.position, pointPos, speed * Time.deltaTime );
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, chaseSpeed * Time.deltaTime);
     }
 
-    private void Flip()
+   
+    private void FaceVertical(Vector2 dir)
     {
-        transform.Rotate(0, 180, 0);
+        if (spriteTransform == null) return;
+
+        float angle = (dir.y >= 0f) ? 90f : -90f;
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + spriteAngleOffset);
     }
 
+    
+    private void FaceToPlayer(Vector2 dir)
+    {
+        if (spriteTransform == null) return;
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + spriteAngleOffset);
+    }
 }
+
+
