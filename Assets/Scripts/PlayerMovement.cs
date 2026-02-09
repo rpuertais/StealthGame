@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         if (isMoving)
         {
             float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.rotation = Quaternion.Euler(0, 0, angle + 90);
         }
     }
 
