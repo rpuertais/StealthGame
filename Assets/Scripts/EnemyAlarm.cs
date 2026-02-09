@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyAlarm : MonoBehaviour
 {
-    SpriteRenderer alarmRenderer;
+
+    public GameObject RedAlarm;
+
 
     public void PlayerDetected()
     {
-        ChangeColor(Color.red);
+        Debug.Log("isActive");
+        ChangeColor(true);
     }
 
     public void PlayerLeft()
     {
-        ChangeColor(Color.green);
+        ChangeColor(false);
     }
 
-    private void ChangeColor(Color color)
+    private void ChangeColor(bool isActive)
     {
-        if (alarmRenderer == null) alarmRenderer = GetComponent<SpriteRenderer>();
-
-        alarmRenderer.color = color;
+        Debug.Log(isActive);
+        RedAlarm.SetActive(isActive);
     }
 }

@@ -8,11 +8,10 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Visual")]
     [SerializeField] private Transform spriteTransform;   
-    [SerializeField] private float spriteAngleOffset = 0f;
 
     [Header("Speeds")]
     [SerializeField] private float patrolSpeed = 2f;
-    [SerializeField] private float chaseSpeed = 3.5f;
+    [SerializeField] private float chaseSpeed = 3f;
 
     [Header("Chase")]
     [SerializeField] private float loseChaseExtraRange = 0.1f;
@@ -77,8 +76,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (spriteTransform == null) return;
 
-        float angle = (dir.y >= 0f) ? 90f : -90f;
-        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + spriteAngleOffset);
+        float angle = (dir.y >= 0f) ? 180f : 0f;
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle);
     }
 
     
@@ -88,7 +87,7 @@ public class EnemyMovement : MonoBehaviour
         if (dir.sqrMagnitude < 0.0001f) return;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + spriteAngleOffset);
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + 90);
     }
 }
 

@@ -11,51 +11,46 @@ public class VisionDetector : MonoBehaviour
     public float DetectionRange = 4f;
     public float VisionAngle = 90f;
 
-    [Header("Alarm")]
-    public EnemyAlarm alarm;
+    [Header("AlarmUI")]
+    public AlarmUI AlarmUI;
 
-    
+    private bool isDetecting = false;
+
+
     public Transform DetectedPlayer { get; private set; }
-
     
     public Vector2 Forward2D { get; private set; } = Vector2.right;
 
-    
     public void SetForward(Vector2 dir)
     {
         if (dir.sqrMagnitude < 0.0001f) return;
         Forward2D = dir.normalized;
     }
 
-    private void Awake()
-    {
-        
-        if (alarm == null)
-        {
-           
-            alarm = GetComponent<EnemyAlarm>();
-
-            
-            if (alarm == null) alarm = GetComponentInParent<EnemyAlarm>();
-            if (alarm == null) alarm = GetComponentInChildren<EnemyAlarm>();
-        }
-    }
-
     private void Update()
     {
         var detected = DetectPlayers();
+        bool nowDetecting = detected.Length > 0;
 
-        
-        if (detected.Length > 0)
+        if (nowDetecting)
         {
             DetectedPlayer = detected[0];
-            if (alarm != null) alarm.PlayerDetected();
         }
         else
         {
             DetectedPlayer = null;
-            if (alarm != null) alarm.PlayerLeft();
         }
+
+        if (!isDetecting && nowDetecting)
+        {
+            AlarmUI.PlayerDetected();
+        }
+        else if (isDetecting && !nowDetecting)
+        {
+            AlarmUI.PlayerLeft();
+        }
+
+        isDetecting = nowDetecting;
     }
 
     public Transform[] DetectPlayers()
@@ -124,10 +119,8 @@ public class VisionDetector : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, DetectionRange);
-
         
         Vector2 f = Forward2D.sqrMagnitude < 0.0001f ? Vector2.right : Forward2D.normalized;
         float halfRad = (VisionAngle * 0.5f) * Mathf.Deg2Rad;
