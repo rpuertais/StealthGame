@@ -803,6 +803,7 @@ GameObject:
   - component: {fileID: 595306066}
   - component: {fileID: 595306065}
   - component: {fileID: 595306064}
+  - component: {fileID: 595306068}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -895,6 +896,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &595306068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595306063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f109d7de7e532094b897ac9fcc71d13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  player: {fileID: 1701691617}
+  distanceText: {fileID: 8979769}
+  timeText: {fileID: 615651457}
 --- !u!1 &615651455
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +922,6 @@ GameObject:
   - component: {fileID: 615651456}
   - component: {fileID: 615651458}
   - component: {fileID: 615651457}
-  - component: {fileID: 615651459}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -975,18 +990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615651455}
   m_CullTransparentMesh: 1
---- !u!114 &615651459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615651455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f99286f514257459a93d0ddfe1da89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimeLogic
 --- !u!1 &619275481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,8 +1776,8 @@ MonoBehaviour:
   firePoint: {fileID: 497332378}
   bulletPrefab: {fileID: 6510459108661299755, guid: 6467b09e9826b6e4597aad8b73422d92,
     type: 3}
-  fireRate: 2
-  shootRange: 4
+  fireRate: 1
+  shootRange: 5
 --- !u!1 &986133619
 GameObject:
   m_ObjectHideFlags: 0
