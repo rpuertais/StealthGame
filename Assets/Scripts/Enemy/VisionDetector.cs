@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class VisionDetector : MonoBehaviour
@@ -15,7 +13,6 @@ public class VisionDetector : MonoBehaviour
     public AlarmUI AlarmUI;
 
     private bool isDetecting = false;
-
 
     public Transform DetectedPlayer { get; private set; }
     
@@ -134,7 +131,6 @@ public class VisionDetector : MonoBehaviour
 
         Gizmos.color = Color.white;
     }
-
 
     private Vector2 Rotate2D(Vector2 v, float radians)
     {
