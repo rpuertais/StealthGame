@@ -5,6 +5,8 @@ public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] private string gameOverSceneName = "Death";
 
+    public UIDistanceAndTime ScoreSystem;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))
@@ -31,6 +33,9 @@ public class PlayerDeath : MonoBehaviour
 
     private void Die()
     {
+        PlayerPrefs.SetFloat("TotalDistance", ScoreSystem.TotalDistance);
+        PlayerPrefs.Save();
+        PlayerPrefs.SetFloat("ElapsedTime", ScoreSystem.ElapsedTime);
         SceneManager.LoadScene(gameOverSceneName);
     }
 }
