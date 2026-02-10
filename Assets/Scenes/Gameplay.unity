@@ -1186,8 +1186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d015c37851e63d44839b0c860a080dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  target: {fileID: 1701691617}
-  offset: {x: 0, y: 0, z: -10}
+  Target: {fileID: 0}
+  Offset: {x: 0, y: 0, z: -10}
 --- !u!1 &548312946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,9 +1398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f109d7de7e532094b897ac9fcc71d13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 1701691617}
-  distanceText: {fileID: 8979769}
-  timeText: {fileID: 615651457}
+  Player: {fileID: 0}
+  DistanceText: {fileID: 0}
+  TimeText: {fileID: 0}
   TotalDistance: 0
   ElapsedTime: 0
 --- !u!114 &595306069
@@ -13687,7 +13687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991a75c65752d5e4ea272dbab50837df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  speed: 5
 --- !u!114 &1701691624
 MonoBehaviour:
   m_ObjectHideFlags: 0
