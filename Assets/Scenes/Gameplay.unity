@@ -1933,8 +1933,8 @@ MonoBehaviour:
   PointA: {fileID: 1539116045}
   PointB: {fileID: 1604682246}
   spriteTransform: {fileID: 1441953342}
-  patrolSpeed: 2
-  chaseSpeed: 2.5
+  patrolSpeed: 5
+  chaseSpeed: 5
   loseChaseExtraRange: 0.1
 --- !u!4 &713300791
 Transform:
@@ -2471,8 +2471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5833d8fc65204c8429a2a8c7bdefe8b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  patrolSpeedDegPerSec: 70
-  maxSwingAngle: 90
+  patrolSpeedDegPerSec: 150
+  maxSwingAngle: 360
   aimSpeedDegPerSec: 60
   loseTargetGraceTime: 1
   returnSpeedDegPerSec: 90
@@ -11236,8 +11236,8 @@ MonoBehaviour:
   PointA: {fileID: 60097588}
   PointB: {fileID: 993990124}
   spriteTransform: {fileID: 191382397}
-  patrolSpeed: 2
-  chaseSpeed: 2.5
+  patrolSpeed: 5
+  chaseSpeed: 5
   loseChaseExtraRange: 0.1
 --- !u!1 &1701691613
 GameObject:
