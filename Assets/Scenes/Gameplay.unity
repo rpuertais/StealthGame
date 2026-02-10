@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -223, y: -56}
+  m_AnchoredPosition: {x: -177.5, y: -56}
   m_SizeDelta: {x: 387.96, y: 47.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8979769
@@ -178,12 +178,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_Font: {fileID: 12800000, guid: d85e9032ffa78e44b84fc987322478a7, type: 3}
+    m_FontSize: 65
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 45
+    m_MaxSize: 65
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -804,6 +804,7 @@ GameObject:
   - component: {fileID: 595306065}
   - component: {fileID: 595306064}
   - component: {fileID: 595306068}
+  - component: {fileID: 595306069}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -911,6 +912,18 @@ MonoBehaviour:
   player: {fileID: 1701691617}
   distanceText: {fileID: 8979769}
   timeText: {fileID: 615651457}
+--- !u!114 &595306069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595306063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3e5956b5876454a8e83ff5d099b0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
 --- !u!1 &615651455
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -270, y: -101}
+  m_AnchoredPosition: {x: -218.5, y: -123.8}
   m_SizeDelta: {x: 298.3, y: 48.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &615651457
@@ -969,12 +982,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_Font: {fileID: 12800000, guid: d85e9032ffa78e44b84fc987322478a7, type: 3}
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 45
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
