@@ -8,37 +8,26 @@ public class VisionArcRenderer : MonoBehaviour
     [Header("Arc Settings")]
     [SerializeField] private int segments = 40;
     
-
     [Header("Occlusion")]
     [SerializeField] private LayerMask occluders; 
     [SerializeField] private float skin = 0.01f; 
     
-
     private LineRenderer lr;
-
     
-
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
         lr.useWorldSpace = true;
         lr.loop = false;
 
-        vision = GetComponent<VisionDetector>();
-        
-
-        
+        vision = GetComponent<VisionDetector>();       
     }
-
-    
 
     private void LateUpdate()
     {
         if (vision == null) return;
 
-        
         DrawOccludedCone();
-        
     }
 
     private void DrawOccludedCone()
@@ -52,7 +41,6 @@ public class VisionArcRenderer : MonoBehaviour
         float range = vision.DetectionRange;
         float angle = vision.VisionAngle;
         float halfRad = (angle * 0.5f) * Mathf.Deg2Rad;
-
         
         lr.positionCount = segments + 3;
         lr.SetPosition(0, origin);
@@ -63,7 +51,6 @@ public class VisionArcRenderer : MonoBehaviour
             float current = Mathf.Lerp(-halfRad, +halfRad, t);
 
             Vector2 dir = Rotate2D(forward, current);
-
             
             float dist = range;
             if (occluders.value != 0)
@@ -82,8 +69,6 @@ public class VisionArcRenderer : MonoBehaviour
 
     private void DrawOccludedMesh()
     {
-       
-
         Vector3 origin = transform.position;
 
         Vector2 forward = vision.Forward2D;
@@ -126,11 +111,7 @@ public class VisionArcRenderer : MonoBehaviour
             tris[tri + 1] = i + 1;
             tris[tri + 2] = i + 2;
         }
-
-        
     }
-
-    
 
     private Vector2 Rotate2D(Vector2 v, float radians)
     {

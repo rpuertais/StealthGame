@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class EnemyStaticShooter : MonoBehaviour
 {
     [Header("Refs")]
@@ -17,7 +16,6 @@ public class EnemyStaticShooter : MonoBehaviour
 
     private void Awake()
     {
-        
             vision = GetComponentInChildren<VisionDetector>(true);
     }
 
@@ -25,7 +23,6 @@ public class EnemyStaticShooter : MonoBehaviour
     {
         if (vision == null || bulletPrefab == null || firePoint == null) return;
 
-       
         if (vision.DetectedPlayer == null) return;
 
         float dist = Vector2.Distance(firePoint.position, vision.DetectedPlayer.position);
