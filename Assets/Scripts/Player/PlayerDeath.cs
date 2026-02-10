@@ -7,13 +7,11 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
         if (other.CompareTag("Bullet"))
         {
             Die();
             return;
         }
-
         
         if (other.CompareTag("Enemy"))
         {
@@ -24,7 +22,6 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.collider.CompareTag("Enemy"))
         {
             Die();
