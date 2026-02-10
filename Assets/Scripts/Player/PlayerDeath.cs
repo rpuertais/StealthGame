@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] private string gameOverSceneName = "Death";
+    
+    public UIDistanceAndTime ScoreSystem;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,6 +36,10 @@ public class PlayerDeath : MonoBehaviour
 
     private void Die()
     {
+        PlayerPrefs.SetFloat("TotalDistance", ScoreSystem.TotalDistance);
+        PlayerPrefs.Save();
+        PlayerPrefs.SetFloat("ElapsedTime", ScoreSystem.ElapsedTime);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(gameOverSceneName);
     }
 }

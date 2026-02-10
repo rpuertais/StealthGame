@@ -5566,6 +5566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameOverSceneName: Death
+  ScoreSystem: {fileID: 595306068}
 --- !u!1 &1796637532
 GameObject:
   m_ObjectHideFlags: 0

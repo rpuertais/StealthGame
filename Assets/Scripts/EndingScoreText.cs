@@ -7,8 +7,8 @@ public class EndingScoreText : MonoBehaviour
 
     void Start()
     {
-        float distance = 0f;
-        float timer = 0f;
+        float distance = PlayerPrefs.GetFloat("TotalDistance");
+        float timer = PlayerPrefs.GetFloat("ElapsedTime");
         float totalScore = distance / (timer / 10);
 
         ScoreText.text = "Distance: " + distance + "\nTimer: " + timer + "\nTotalScore: " + totalScore;
