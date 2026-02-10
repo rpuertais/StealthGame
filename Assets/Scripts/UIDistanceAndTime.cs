@@ -9,14 +9,14 @@ public class UIDistanceAndTime : MonoBehaviour
     public Text timeText;       
 
     private Vector2 lastPos;
-    private float totalDistance;
-    private float elapsedTime;
+    public float TotalDistance;
+    public float ElapsedTime;
 
     private void Start()
     {
         if (player != null) lastPos = player.position;
-        totalDistance = 0f;
-        elapsedTime = 0f;
+        TotalDistance = 0f;
+        ElapsedTime = 0f;
 
         UpdateUI();
     }
@@ -24,13 +24,11 @@ public class UIDistanceAndTime : MonoBehaviour
     private void Update()
     {
         if (player == null) return;
-
         
-        elapsedTime += Time.deltaTime;
+        ElapsedTime += Time.deltaTime;
 
-        
         Vector2 currentPos = player.position;
-        totalDistance += Vector2.Distance(currentPos, lastPos);
+        TotalDistance += Vector2.Distance(currentPos, lastPos);
         lastPos = currentPos;
 
         UpdateUI();
@@ -39,10 +37,10 @@ public class UIDistanceAndTime : MonoBehaviour
     private void UpdateUI()
     {
         if (distanceText != null)
-            distanceText.text = "Distance: " + totalDistance.ToString("F2") + " units";
+            distanceText.text = "Distance: " + TotalDistance.ToString("F2") + " units";
 
         if (timeText != null)
-            timeText.text = "Time: " + elapsedTime.ToString("F2") + " sec.";
+            timeText.text = "Time: " + ElapsedTime.ToString("F2") + " sec.";
     }
 }
 
