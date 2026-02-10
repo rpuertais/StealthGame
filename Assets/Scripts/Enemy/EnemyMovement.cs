@@ -31,16 +31,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        
         if (vision != null && vision.DetectedPlayer != null)
-            chaseTarget = vision.DetectedPlayer;
+        { chaseTarget = vision.DetectedPlayer; }
         else
-            chaseTarget = null;
+        { chaseTarget = null; }
 
         if (chaseTarget != null)
-            Chase();
+        { Chase(); }
         else
-            Patrol();
+        { Patrol();}
     }
 
     private void Patrol()
@@ -54,10 +53,10 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, pointPos, patrolSpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, PointA.position) < 0.1f)
-            objectivePointA = false;
+        { objectivePointA = false; }
 
         if (Vector2.Distance(transform.position, PointB.position) < 0.1f)
-            objectivePointA = true;
+        { objectivePointA = true; }
     }
 
     private void Chase()
@@ -66,11 +65,10 @@ public class EnemyMovement : MonoBehaviour
         Vector2 dir = targetPos - (Vector2)transform.position;
 
         if (vision != null) vision.SetForward(dir);
-        FaceToPlayer(dir);
+        { FaceToPlayer(dir); }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, chaseSpeed * Time.deltaTime);
     }
-
    
     private void FaceVertical(Vector2 dir)
     {
@@ -79,7 +77,6 @@ public class EnemyMovement : MonoBehaviour
         float angle = (dir.y >= 0f) ? 180f : 0f;
         spriteTransform.eulerAngles = new Vector3(0f, 0f, angle);
     }
-
     
     private void FaceToPlayer(Vector2 dir)
     {
