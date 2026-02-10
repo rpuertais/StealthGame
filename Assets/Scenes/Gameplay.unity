@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d015c37851e63d44839b0c860a080dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  Target: {fileID: 0}
+  Target: {fileID: 1701691617}
   Offset: {x: 0, y: 0, z: -10}
 --- !u!1 &548312946
 GameObject:
@@ -1398,9 +1398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f109d7de7e532094b897ac9fcc71d13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Player: {fileID: 0}
-  DistanceText: {fileID: 0}
-  TimeText: {fileID: 0}
+  Player: {fileID: 1701691617}
+  DistanceText: {fileID: 8979769}
+  TimeText: {fileID: 615651457}
   TotalDistance: 0
   ElapsedTime: 0
 --- !u!114 &595306069
@@ -13744,6 +13744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameOverSceneName: Death
+  ScoreSystem: {fileID: 595306068}
 --- !u!1 &1778939395
 GameObject:
   m_ObjectHideFlags: 0
