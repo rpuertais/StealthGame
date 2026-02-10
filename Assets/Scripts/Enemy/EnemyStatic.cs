@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class EnemyStatic : MonoBehaviour
 {
     private enum State { Patrol, Aim, ReturnToPatrol }
@@ -24,7 +23,6 @@ public class EnemyStatic : MonoBehaviour
     private float currentOffset;  
     private int swingDir = 1;
 
-    
     private Transform currentTarget;
     private Vector2 lastKnownTargetPos;
     private float graceTimer = 0f;
@@ -37,13 +35,11 @@ public class EnemyStatic : MonoBehaviour
         baseAngle = NormalizeAngle(rotatePivot.eulerAngles.z);
         currentOffset = 0f;
 
-        
         UpdateVisionForwardFromAngle(baseAngle);
     }
 
     private void Update()
     {
-        
         if (vision != null && vision.DetectedPlayer != null)
         {
             currentTarget = vision.DetectedPlayer;
@@ -57,10 +53,10 @@ public class EnemyStatic : MonoBehaviour
                 currentTarget = null;
         }
 
-        
         switch (state)
         {
             case State.Patrol:
+
                 PatrolRotate();
 
                 if (currentTarget != null && IsPosWithinSwing(lastKnownTargetPos))
@@ -78,19 +74,22 @@ public class EnemyStatic : MonoBehaviour
                 
                 AimToPosition(lastKnownTargetPos);
 
-                if (currentTarget == null) 
+                if (currentTarget == null)
+                {
                     state = State.ReturnToPatrol;
+                }
                 break;
 
             case State.ReturnToPatrol:
-                
+
                 if (ReturnToSwingBand())
+                {
                     state = State.Patrol;
+                }
                 break;
         }
     }
 
-    
     private void PatrolRotate()
     {
         float half = maxSwingAngle * 0.5f;
@@ -111,7 +110,6 @@ public class EnemyStatic : MonoBehaviour
         SetPivotAngle(baseAngle + currentOffset);
     }
 
-  
     private void AimToPosition(Vector2 targetPos)
     {
         Vector2 toTarget = targetPos - (Vector2)rotatePivot.position;
@@ -125,7 +123,6 @@ public class EnemyStatic : MonoBehaviour
 
         SetPivotAngle(newAngle);
     }
-
     
     private bool ReturnToSwingBand()
     {
@@ -154,7 +151,6 @@ public class EnemyStatic : MonoBehaviour
         return false;
     }
 
-    
     private bool IsPosWithinSwing(Vector2 pos)
     {
         Vector2 toPos = pos - (Vector2)rotatePivot.position;
@@ -172,7 +168,6 @@ public class EnemyStatic : MonoBehaviour
         float delta = Mathf.Abs(Mathf.DeltaAngle(center, angle));
         return delta <= half + 0.0001f;
     }
-
     
     private void SetPivotAngle(float angleDeg)
     {

@@ -22,11 +22,8 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        
+    {      
         if (((1 << other.gameObject.layer) & hitMask) == 0) return;
-
-        
 
         Destroy(gameObject);
     }
