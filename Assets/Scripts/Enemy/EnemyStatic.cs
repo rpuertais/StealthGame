@@ -14,8 +14,8 @@ public class EnemyStatic : MonoBehaviour
     [Header("Return")]
     [SerializeField] private float returnSpeedDegPerSec = 90f;  
 
-     private VisionDetector vision;             
-     private Transform rotatePivot;             
+    private VisionDetector vision;             
+    private Transform rotatePivot;             
 
     private State state = State.Patrol;
 

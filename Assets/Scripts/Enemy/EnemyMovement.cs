@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
         else
         { pointPos = (Vector2)PointB.position; }
 
-            Vector2 dir = pointPos - (Vector2)transform.position;
+        Vector2 dir = pointPos - (Vector2)transform.position;
 
         if (vision != null) vision.SetForward(dir);
         FaceVertical(dir);

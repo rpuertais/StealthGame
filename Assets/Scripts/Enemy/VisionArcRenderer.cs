@@ -78,7 +78,6 @@ public class VisionArcRenderer : MonoBehaviour
         float range = vision.DetectionRange;
         float angle = vision.VisionAngle;
         float halfRad = (angle * 0.5f) * Mathf.Deg2Rad;
-
         
         int vertexCount = segments + 2;
         Vector3[] verts = new Vector3[vertexCount];
