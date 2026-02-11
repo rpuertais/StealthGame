@@ -12,6 +12,9 @@ public class EnemyStaticShooter : MonoBehaviour
     [SerializeField] private float fireRate = 3f;
     [SerializeField] private float shootRange = 3f;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource shootSound;
+
     private float nextShotTime;
 
     private void Awake()
@@ -36,6 +39,9 @@ public class EnemyStaticShooter : MonoBehaviour
 
     private void Shoot()
     {
+        
+            shootSound.Play();
+
         Vector2 dir = vision.Forward2D;
         if (dir.sqrMagnitude < 0.0001f)
             dir = (vision.DetectedPlayer.position - firePoint.position).normalized;
