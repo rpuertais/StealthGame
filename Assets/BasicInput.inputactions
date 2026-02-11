@@ -136,23 +136,23 @@
                 },
                 {
                     "name": "",
-                    "id": "cca300a8-3c96-45ee-83cc-bea84db0f84d",
-                    "path": "<Keyboard>/escape",
+                    "id": "4ea49c2d-37fd-4b16-9790-7cdb8cb46b39",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Escape",
+                    "groups": ";keyboard",
+                    "action": "Enter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "4ea49c2d-37fd-4b16-9790-7cdb8cb46b39",
-                    "path": "<Keyboard>/enter",
+                    "id": "94ba059f-f4d3-4a75-824d-d154922fff8b",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Enter",
+                    "groups": ";keyboard",
+                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -187,5 +187,17 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "keyboard",
+            "bindingGroup": "keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
