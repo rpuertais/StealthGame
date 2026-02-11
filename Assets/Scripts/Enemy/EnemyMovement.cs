@@ -16,6 +16,9 @@ public class EnemyMovement : MonoBehaviour
     [Header("Chase")]
     [SerializeField] private float loseChaseExtraRange = 0.1f;
 
+    [Header("Rotation")]
+    [SerializeField] private int angleRot;
+
     private bool objectivePointA = true;
 
     private VisionDetector vision;
@@ -44,8 +47,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void Patrol()
     {
-        Vector2 pointPos = objectivePointA ? (Vector2)PointA.position : (Vector2)PointB.position;
-        Vector2 dir = pointPos - (Vector2)transform.position;
+        Vector2 pointPos;
+
+        if (objectivePointA)
+        { pointPos = (Vector2)PointA.position; }
+        else
+        { pointPos = (Vector2)PointB.position; }
+
+            Vector2 dir = pointPos - (Vector2)transform.position;
 
         if (vision != null) vision.SetForward(dir);
         FaceVertical(dir);
@@ -74,8 +83,14 @@ public class EnemyMovement : MonoBehaviour
     {
         if (spriteTransform == null) return;
 
-        float angle = (dir.y >= 0f) ? 180f : 0f;
-        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle);
+        float angle = 0f;
+
+        if (dir.y >= 0f)
+        { angle = 180f; }
+        else
+        { angle = 0f; }
+
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + angleRot);
     }
     
     private void FaceToPlayer(Vector2 dir)
@@ -84,7 +99,7 @@ public class EnemyMovement : MonoBehaviour
         if (dir.sqrMagnitude < 0.0001f) return;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + 90);
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + angleRot);
     }
 }
 
