@@ -56,16 +56,20 @@
 
 	Video Game Action Loop.wav by DeVern
 	Llicència: Creative Commons Attribution 3.0 (CC BY 3.0)
-	Font: https://freesound.org/people/DeVern/sounds/xxxxxx/
+	Font: https://freesound.org/people/DeVern/sounds/586628/
 
 	Game Over - low by MT4000
 	Llicència: Creative Commons 0 (CC0)
-	Font: https://freesound.org
+	Font: https://freesound.org/people/MT4000/sounds/664606/
 
 	Button 5 by Josheb Policarpio
 	Llicència: Creative Commons Attribution 4.0 (CC BY 4.0)
-	Font: https://freesound.org
+	Font: https://freesound.org/people/josheb_policarpio/sounds/613406/
 
 	Calm Menu Music (loopable) (LO-FI) by DAN2008
 	Llicència: Creative Commons 0 (CC0)
-	Font: https://freesound.org
+	Font: https://freesound.org/people/DAN2008/sounds/789772/
+
+	"Victory Fanfare (8-Bit Thunder) 1" by Dylan Kelk / SilverIllusionist
+	Llicència: Creative Commons Attribution 4.0 (CC BY 4.0)
+	Font: https://freesound.org/people/SilverIllusionist/sounds/843043/
