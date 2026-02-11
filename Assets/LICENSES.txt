@@ -73,3 +73,7 @@
 	"Victory Fanfare (8-Bit Thunder) 1" by Dylan Kelk / SilverIllusionist
 	Llicència: Creative Commons Attribution 4.0 (CC BY 4.0)
 	Font: https://freesound.org/people/SilverIllusionist/sounds/843043/
+
+	Shooting_Sounds_004.wav by jalastram
+	Llicència: Creative Commons Attribution 4.0 (CC BY 4.0)
+	Font: https://freesound.org/people/jalastram/sounds/362454/
