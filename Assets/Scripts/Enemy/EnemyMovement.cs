@@ -13,11 +13,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float patrolSpeed = 2f;
     [SerializeField] private float chaseSpeed = 3f;
 
+    [Header("Chase")]
+    [SerializeField] private float loseChaseExtraRange = 0.1f;
+
     [Header("Rotation")]
-    [SerializeField] private int angleRotMov;
-    [SerializeField] private int angleRotChase;
-    [SerializeField] private float angleFlip1;
-    [SerializeField] private float angleFlip2;
+    [SerializeField] private int angleRot;
 
     private bool objectivePointA = true;
 
@@ -86,11 +86,11 @@ public class EnemyMovement : MonoBehaviour
         float angle = 0f;
 
         if (dir.y >= 0f)
-        { angle = angleFlip1; }
+        { angle = 180f; }
         else
-        { angle = angleFlip2; }
+        { angle = 0f; }
 
-        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + angleRotMov);
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + angleRot);
     }
     
     private void FaceToPlayer(Vector2 dir)
@@ -99,7 +99,7 @@ public class EnemyMovement : MonoBehaviour
         if (dir.sqrMagnitude < 0.0001f) return;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + angleRotChase);
+        spriteTransform.eulerAngles = new Vector3(0f, 0f, angle + angleRot);
     }
 }
 
