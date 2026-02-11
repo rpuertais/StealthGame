@@ -5631,8 +5631,10 @@ MonoBehaviour:
   spriteTransform: {fileID: 1441953342}
   patrolSpeed: 5
   chaseSpeed: 5
-  loseChaseExtraRange: 0.1
-  angleRot: 90
+  angleRotMov: -90
+  angleRotChase: 0
+  angleFlip1: 180
+  angleFlip2: 0
 --- !u!4 &713300791
 Transform:
   m_ObjectHideFlags: 0
@@ -9614,8 +9616,10 @@ MonoBehaviour:
   spriteTransform: {fileID: 2020127908}
   patrolSpeed: 2
   chaseSpeed: 2.5
-  loseChaseExtraRange: 0.1
-  angleRot: 0
+  angleRotMov: 0
+  angleRotChase: 90
+  angleFlip1: 180
+  angleFlip2: 0
 --- !u!1 &838626189
 GameObject:
   m_ObjectHideFlags: 0
@@ -23458,8 +23462,10 @@ MonoBehaviour:
   spriteTransform: {fileID: 191382397}
   patrolSpeed: 5
   chaseSpeed: 5
-  loseChaseExtraRange: 0.1
-  angleRot: 0
+  angleRotMov: 0
+  angleRotChase: 90
+  angleFlip1: 180
+  angleFlip2: 0
 --- !u!1 &1627335671
 GameObject:
   m_ObjectHideFlags: 0
@@ -26371,8 +26377,10 @@ MonoBehaviour:
   spriteTransform: {fileID: 619275482}
   patrolSpeed: 2
   chaseSpeed: 2.5
-  loseChaseExtraRange: 0.1
-  angleRot: 0
+  angleRotMov: 0
+  angleRotChase: 90
+  angleFlip1: 180
+  angleFlip2: 0
 --- !u!61 &2108089971
 BoxCollider2D:
   m_ObjectHideFlags: 0
