@@ -49,3 +49,23 @@
 	Ús permès en projectes gratuïts i comercials. Modificació permesa.
 	Redistribució i revenda prohibides.
 	Disponible a: https://assetstore.unity.com/packages/2d/environments/pixel-art-top-down-basic-187605
+
+--------------------------------------------------------------------------------------------------------
+
+	Free Sounds
+
+	Video Game Action Loop.wav by DeVern
+	Llicència: Creative Commons Attribution 3.0 (CC BY 3.0)
+	Font: https://freesound.org/people/DeVern/sounds/xxxxxx/
+
+	Game Over - low by MT4000
+	Llicència: Creative Commons 0 (CC0)
+	Font: https://freesound.org
+
+	Button 5 by Josheb Policarpio
+	Llicència: Creative Commons Attribution 4.0 (CC BY 4.0)
+	Font: https://freesound.org
+
+	Calm Menu Music (loopable) (LO-FI) by DAN2008
+	Llicència: Creative Commons 0 (CC0)
+	Font: https://freesound.org
